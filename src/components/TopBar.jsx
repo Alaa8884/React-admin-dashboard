@@ -114,7 +114,9 @@ function TopBar({ open, handleDrawerOpen, handleToggleColorMode }) {
             inputProps={{ "aria-label": "search" }}
           />
         </Search>
+
         <Box flexGrow={1}></Box>
+        
         <Stack direction="row" spacing={1}>
           {theme.palette.mode === "light" ? (
             <IconButton

@@ -1,4 +1,4 @@
-// import * as React from "react";
+import { useState } from "react";
 import { useMemo } from "react";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -7,7 +7,6 @@ import TopBar from "./components/TopBar";
 import SideBar from "./components/SideBar";
 import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
 import { getDesignTokens } from "./components/theme";
-import { useState } from "react";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -20,9 +19,13 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 export default function MiniDrawer() {
   const [open, setOpen] = useState(false);
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState(
+    window.localStorage.getItem("currMode")
+      ? window.localStorage.getItem("currMode")
+      : "light"
+  );
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
-  
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -32,8 +35,12 @@ export default function MiniDrawer() {
   };
 
   const handleToggleColorMode = () => {
-    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-  }
+    setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+    window.localStorage.setItem(
+      "currMode",
+      `${theme.palette.mode === "light" ? "dark" : "light"}`
+    );
+  };
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }}>
@@ -41,7 +48,8 @@ export default function MiniDrawer() {
         <TopBar
           open={open}
           handleDrawerOpen={handleDrawerOpen}
-          handleToggleColorMode={handleToggleColorMode} />
+          handleToggleColorMode={handleToggleColorMode}
+        />
         <SideBar handleDrawerClose={handleDrawerClose} open={open} />
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
