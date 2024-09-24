@@ -1,11 +1,13 @@
-import * as React from "react";
+// import * as React from "react";
+import { useMemo } from "react";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
 import TopBar from "./components/TopBar";
 import SideBar from "./components/SideBar";
-import { styled } from "@mui/material/styles";
-
+import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
+import { getDesignTokens } from "./components/theme";
+import { useState } from "react";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -16,11 +18,11 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
-
-
 export default function MiniDrawer() {
-  const [open, setOpen] = React.useState(false);
-
+  const [open, setOpen] = useState(false);
+  const [mode, setMode] = useState("light");
+  const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+  
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -29,16 +31,24 @@ export default function MiniDrawer() {
     setOpen(false);
   };
 
+  const handleToggleColorMode = () => {
+    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+  }
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <TopBar open={open} handleDrawerOpen={handleDrawerOpen} />
-      <SideBar handleDrawerClose={handleDrawerClose} open={open} />
+    <ThemeProvider theme={theme}>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <TopBar
+          open={open}
+          handleDrawerOpen={handleDrawerOpen}
+          handleToggleColorMode={handleToggleColorMode} />
+        <SideBar handleDrawerClose={handleDrawerClose} open={open} />
 
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        <Typography sx={{ marginBottom: 2 }}>HALLO world</Typography>
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <DrawerHeader />
+          <Typography sx={{ marginBottom: 2 }}>HALLO world</Typography>
+        </Box>
       </Box>
-    </Box>
+    </ThemeProvider>
   );
 }
