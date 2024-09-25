@@ -86,7 +86,7 @@ const array01 = [
   {
     text: "Dashboard",
     icon: <HomeOutlinedIcon />,
-    path: "/dashboard",
+    path: "/",
   },
   {
     text: "Manage Team",
