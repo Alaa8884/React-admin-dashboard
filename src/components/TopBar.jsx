@@ -13,6 +13,7 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import { deepPurple } from "@mui/material/colors";
 
 const drawerWidth = 240;
 
@@ -83,11 +84,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 function TopBar({ open, handleDrawerOpen, handleToggleColorMode }) {
   const theme = useTheme();
 
+
   return (
     <AppBar
       position="fixed"
       // @ts-ignore
       open={open}
+      sx={{
+        bgcolor: deepPurple[600],
+      }}
     >
       <Toolbar>
         <IconButton
@@ -116,7 +121,7 @@ function TopBar({ open, handleDrawerOpen, handleToggleColorMode }) {
         </Search>
 
         <Box flexGrow={1}></Box>
-        
+
         <Stack direction="row" spacing={1}>
           {theme.palette.mode === "light" ? (
             <IconButton

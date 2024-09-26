@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import IconButton from "@mui/material/IconButton";
 import Divider from "@mui/material/Divider";
@@ -24,6 +24,7 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 import { styled, useTheme } from "@mui/material/styles";
 import { Avatar, Typography } from "@mui/material";
+import { deepPurple } from "@mui/material/colors";
 
 const drawerWidth = 240;
 
@@ -149,6 +150,7 @@ const array03 = [
 function SideBar({ open, handleDrawerClose }) {
   const theme = useTheme();
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <Drawer variant="permanent" open={open}>
@@ -171,12 +173,12 @@ function SideBar({ open, handleDrawerClose }) {
           my: 1,
           border:
             theme.palette.mode === "light"
-              ? "2px solid grey"
-              : "2px solid #fff",
+              ? "2px solid #b39ddb "
+              : "2px solid #7e57c2" ,
           transition: "0.4s",
         }}
         alt="Alaa Mohammed"
-        src="../assets/images/admin.jpg"
+        src="assets/images/admin.jfif"
       />
 
       <Typography
@@ -200,13 +202,40 @@ function SideBar({ open, handleDrawerClose }) {
       <Divider />
       <List>
         {array01.map((item) => (
-          <ListItem key={item.path} disablePadding sx={{ display: "block" }}>
+          <ListItem
+            key={item.path}
+            disablePadding
+            sx={{
+              display: "block",
+              ":hover": {
+                bgcolor:
+                  theme.palette.mode === "light"
+                    ? deepPurple[200]
+                    : deepPurple[400],
+              },
+              transition: " 0.4s",
+              ":focus": {
+                bgcolor:
+                  location.pathname === item.path
+                    ? theme.palette.mode === "light"
+                      ? deepPurple[200]
+                      : deepPurple[400]
+                    : null,
+              },
+            }}
+          >
             <ListItemButton
               onClick={() => navigate(item.path)}
               sx={[
                 {
                   minHeight: 48,
                   px: 2.5,
+                  bgcolor:
+                    location.pathname === item.path
+                      ? theme.palette.mode === "light"
+                        ? deepPurple[200]
+                        : deepPurple[400]
+                      : null,
                 },
                 open
                   ? {
@@ -255,13 +284,40 @@ function SideBar({ open, handleDrawerClose }) {
 
       <List>
         {array02.map((item) => (
-          <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
+          <ListItem
+            key={item.text}
+            disablePadding
+            sx={{
+              display: "block",
+              ":hover": {
+                bgcolor:
+                  theme.palette.mode === "light"
+                    ? deepPurple[200]
+                    : deepPurple[400],
+              },
+              transition: " 0.4s",
+              ":focus": {
+                bgcolor:
+                  location.pathname === item.path
+                    ? theme.palette.mode === "light"
+                      ? deepPurple[200]
+                      : deepPurple[400]
+                    : null,
+              },
+            }}
+          >
             <ListItemButton
               onClick={() => navigate(item.path)}
               sx={[
                 {
                   minHeight: 48,
                   px: 2.5,
+                  bgcolor:
+                    location.pathname === item.path
+                      ? theme.palette.mode === "light"
+                        ? deepPurple[100]
+                        : deepPurple[300]
+                      : null,
                 },
                 open
                   ? {
@@ -309,13 +365,40 @@ function SideBar({ open, handleDrawerClose }) {
 
       <List>
         {array03.map((item) => (
-          <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
+          <ListItem
+            key={item.text}
+            disablePadding
+            sx={{
+              display: "block",
+              ":hover": {
+                bgcolor:
+                  theme.palette.mode === "light"
+                    ? deepPurple[200]
+                    : deepPurple[400],
+              },
+              transition: " 0.4s",
+              ":focus": {
+                bgcolor:
+                  location.pathname === item.path
+                    ? theme.palette.mode === "light"
+                      ? deepPurple[200]
+                      : deepPurple[400]
+                    : null,
+              },
+            }}
+          >
             <ListItemButton
               onClick={() => navigate(item.path)}
               sx={[
                 {
                   minHeight: 48,
                   px: 2.5,
+                  bgcolor:
+                    location.pathname === item.path
+                      ? theme.palette.mode === "light"
+                        ? deepPurple[100]
+                        : deepPurple[300]
+                      : null,
                 },
                 open
                   ? {
