@@ -8,7 +8,7 @@ function PageContainer({ children }) {
   return (
     <Box
       sx={{
-        height: 600,
+        height: 650,
         mx: "auto",
         ".team-info": {
           backgroundColor:
