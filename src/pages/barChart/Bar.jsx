@@ -5,7 +5,7 @@ import { Box, useTheme } from "@mui/material";
 function Bar() {
   const theme = useTheme();
   return (
-    <Box sx={{ height: "75vh" }}>
+    <Box sx={{ height: "80vh" }}>
       <ResponsiveBar
         theme={{
           text: {
