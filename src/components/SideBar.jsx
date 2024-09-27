@@ -25,6 +25,9 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { styled, useTheme } from "@mui/material/styles";
 import { Avatar, Typography } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
+// @ts-ignore
+import image from "../assets/images/admin.jpg";
+
 
 const drawerWidth = 240;
 
@@ -151,7 +154,7 @@ function SideBar({ open, handleDrawerClose }) {
   const theme = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
-
+  const lightMode = theme.palette.mode === "light";
   return (
     <Drawer variant="permanent" open={open}>
       <DrawerHeader>
@@ -171,14 +174,12 @@ function SideBar({ open, handleDrawerClose }) {
           width: open ? 70 : 45,
           height: open ? 70 : 45,
           my: 1,
-          border:
-            theme.palette.mode === "light"
-              ? "2px solid #b39ddb "
-              : "2px solid #7e57c2" ,
+          border: lightMode ? "2px solid #b39ddb " : "2px solid #7e57c2",
           transition: "0.4s",
+          aspectRatio: 1,
         }}
         alt="Alaa Mohammed"
-        src="assets/images/admin.jfif"
+        src={image}
       />
 
       <Typography
@@ -208,18 +209,15 @@ function SideBar({ open, handleDrawerClose }) {
             sx={{
               display: "block",
               ":hover": {
-                bgcolor:
-                  theme.palette.mode === "light"
-                    ? deepPurple[200]
-                    : deepPurple[400],
+                bgcolor: lightMode ? deepPurple[100] : deepPurple[300],
               },
               transition: " 0.4s",
               ":focus": {
                 bgcolor:
                   location.pathname === item.path
-                    ? theme.palette.mode === "light"
-                      ? deepPurple[200]
-                      : deepPurple[400]
+                    ? lightMode
+                      ? deepPurple[100]
+                      : deepPurple[300]
                     : null,
               },
             }}
@@ -232,9 +230,9 @@ function SideBar({ open, handleDrawerClose }) {
                   px: 2.5,
                   bgcolor:
                     location.pathname === item.path
-                      ? theme.palette.mode === "light"
-                        ? deepPurple[200]
-                        : deepPurple[400]
+                      ? lightMode
+                        ? deepPurple[100]
+                        : deepPurple[300]
                       : null,
                 },
                 open
@@ -290,18 +288,15 @@ function SideBar({ open, handleDrawerClose }) {
             sx={{
               display: "block",
               ":hover": {
-                bgcolor:
-                  theme.palette.mode === "light"
-                    ? deepPurple[200]
-                    : deepPurple[400],
+                bgcolor: lightMode ? deepPurple[100] : deepPurple[300],
               },
               transition: " 0.4s",
               ":focus": {
                 bgcolor:
                   location.pathname === item.path
-                    ? theme.palette.mode === "light"
-                      ? deepPurple[200]
-                      : deepPurple[400]
+                    ? lightMode
+                      ? deepPurple[100]
+                      : deepPurple[300]
                     : null,
               },
             }}
@@ -314,7 +309,7 @@ function SideBar({ open, handleDrawerClose }) {
                   px: 2.5,
                   bgcolor:
                     location.pathname === item.path
-                      ? theme.palette.mode === "light"
+                      ? lightMode
                         ? deepPurple[100]
                         : deepPurple[300]
                       : null,
@@ -371,18 +366,15 @@ function SideBar({ open, handleDrawerClose }) {
             sx={{
               display: "block",
               ":hover": {
-                bgcolor:
-                  theme.palette.mode === "light"
-                    ? deepPurple[200]
-                    : deepPurple[400],
+                bgcolor: lightMode ? deepPurple[100] : deepPurple[300],
               },
               transition: " 0.4s",
               ":focus": {
                 bgcolor:
                   location.pathname === item.path
-                    ? theme.palette.mode === "light"
-                      ? deepPurple[200]
-                      : deepPurple[400]
+                    ? lightMode
+                      ? deepPurple[100]
+                      : deepPurple[300]
                     : null,
               },
             }}
@@ -395,7 +387,7 @@ function SideBar({ open, handleDrawerClose }) {
                   px: 2.5,
                   bgcolor:
                     location.pathname === item.path
-                      ? theme.palette.mode === "light"
+                      ? lightMode
                         ? deepPurple[100]
                         : deepPurple[300]
                       : null,

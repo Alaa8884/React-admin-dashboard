@@ -84,14 +84,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 function TopBar({ open, handleDrawerOpen, handleToggleColorMode }) {
   const theme = useTheme();
 
-
   return (
     <AppBar
       position="fixed"
       // @ts-ignore
       open={open}
       sx={{
-        bgcolor: deepPurple[600],
+        bgcolor: theme.palette.mode === "light" ? deepPurple[600] : "#1d152c",
       }}
     >
       <Toolbar>
