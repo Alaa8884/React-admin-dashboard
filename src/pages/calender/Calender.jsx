@@ -1,27 +1,23 @@
 /* eslint-disable react/prop-types */
 import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid"; 
+import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { useState } from "react";
-import { Stack } from "@mui/material";
+import { Paper, Stack, useTheme } from "@mui/material";
 import { formatDate } from "@fullcalendar/core";
-import { createEventId, INITIAL_EVENTS } from "../../utils/event";
-import "./calender.css"
+import { createEventId } from "../../utils/event";
+import "./calender.css";
+import { deepPurple } from "@mui/material/colors";
 
 function Calender() {
-  const [weekendsVisible, setWeekendsVisible] = useState(true);
   const [currentEvents, setCurrentEvents] = useState([]);
-
-  function handleWeekendsToggle() {
-    setWeekendsVisible(!weekendsVisible);
-  }
 
   function handleDateSelect(selectInfo) {
     let title = prompt("Please enter a new title for your event");
     let calendarApi = selectInfo.view.calendar;
 
-    calendarApi.unselect(); // clear date selection
+    calendarApi.unselect();
 
     if (title) {
       calendarApi.addEvent({
@@ -50,11 +46,7 @@ function Calender() {
 
   return (
     <Stack direction={"row"}>
-      <Sidebar
-        weekendsVisible={weekendsVisible}
-        handleWeekendsToggle={handleWeekendsToggle}
-        currentEvents={currentEvents}
-      />
+      <Sidebar currentEvents={currentEvents} />
       <div className="demo-app-main">
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
@@ -68,17 +60,10 @@ function Calender() {
           selectable={true}
           selectMirror={true}
           dayMaxEvents={true}
-          weekends={weekendsVisible}
-          initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
           select={handleDateSelect}
-          eventContent={renderEventContent} // custom render function
+          eventContent={renderEventContent}
           eventClick={handleEventClick}
-          eventsSet={handleEvents} // called after events are initialized/added/changed/removed
-          /* you can update a remote database when these fire:
-          eventAdd={function(){}}
-          eventChange={function(){}}
-          eventRemove={function(){}}
-          */
+          eventsSet={handleEvents}
         />
       </div>
     </Stack>
@@ -94,36 +79,25 @@ function renderEventContent(eventInfo) {
   );
 }
 
-function Sidebar({ weekendsVisible, handleWeekendsToggle, currentEvents }) {
+function Sidebar({ currentEvents }) {
+  const theme = useTheme();
   return (
-    <div className="demo-app-sidebar">
+    <Paper
+      className="demo-app-sidebar"
+      sx={{
+        background: theme.palette.mode === "light" ? deepPurple[50] : "",
+        borderRadius: "8px",
+      }}
+    >
       <div className="demo-app-sidebar-section">
-        <h2>Instructions</h2>
-        <ul>
-          <li>Select dates and you will be prompted to create a new event</li>
-          <li>Drag, drop, and resize events</li>
-          <li>Click an event to delete it</li>
-        </ul>
-      </div>
-      <div className="demo-app-sidebar-section">
-        <label>
-          <input
-            type="checkbox"
-            checked={weekendsVisible}
-            onChange={handleWeekendsToggle}
-          ></input>
-          toggle weekends
-        </label>
-      </div>
-      <div className="demo-app-sidebar-section">
-        <h2>All Events ({currentEvents.length})</h2>
+        <h2 style={{textAlign: "center"}}>All Events ({currentEvents.length})</h2>
         <ul>
           {currentEvents.map((event) => (
             <SidebarEvent key={event.id} event={event} />
           ))}
         </ul>
-      </div>
-    </div>
+      </div>{" "}
+    </Paper>
   );
 }
 
