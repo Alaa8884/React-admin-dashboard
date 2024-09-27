@@ -23,7 +23,7 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 import { styled, useTheme } from "@mui/material/styles";
-import { Avatar, Typography } from "@mui/material";
+import { Avatar, Tooltip, Typography } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 // @ts-ignore
 import image from "../assets/images/admin.jpg";
@@ -208,7 +208,7 @@ function SideBar({ open, handleDrawerClose }) {
             disablePadding
             sx={{
               display: "block",
-             textAlign: "center",
+              textAlign: "center",
               ":hover": {
                 bgcolor: lightMode ? deepPurple[100] : deepPurple[300],
               },
@@ -223,58 +223,60 @@ function SideBar({ open, handleDrawerClose }) {
               },
             }}
           >
-            <ListItemButton
-              onClick={() => navigate(item.path)}
-              sx={[
-                {
-                  minHeight: 48,
-                  px: 2.5,
-                  bgcolor:
-                    location.pathname === item.path
-                      ? lightMode
-                        ? deepPurple[100]
-                        : deepPurple[300]
-                      : null,
-                },
-                open
-                  ? {
-                      justifyContent: "initial",
-                    }
-                  : {
-                      justifyContent: "center",
-                    },
-              ]}
-            >
-              <ListItemIcon
+            <Tooltip title={open ? "" : item.text} placement="right">
+              <ListItemButton
+                onClick={() => navigate(item.path)}
                 sx={[
                   {
-                    minWidth: 0,
-                    justifyContent: "center",
+                    minHeight: 48,
+                    px: 2.5,
+                    bgcolor:
+                      location.pathname === item.path
+                        ? lightMode
+                          ? deepPurple[100]
+                          : deepPurple[300]
+                        : null,
                   },
                   open
                     ? {
-                        mr: 3,
+                        justifyContent: "initial",
                       }
                     : {
-                        mr: "auto",
+                        justifyContent: "center",
                       },
                 ]}
               >
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={item.text}
-                sx={[
-                  open
-                    ? {
-                        opacity: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      },
-                ]}
-              />
-            </ListItemButton>
+                <ListItemIcon
+                  sx={[
+                    {
+                      minWidth: 0,
+                      justifyContent: "center",
+                    },
+                    open
+                      ? {
+                          mr: 3,
+                        }
+                      : {
+                          mr: "auto",
+                        },
+                  ]}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={item.text}
+                  sx={[
+                    open
+                      ? {
+                          opacity: 1,
+                        }
+                      : {
+                          opacity: 0,
+                        },
+                  ]}
+                />
+              </ListItemButton>
+            </Tooltip>
           </ListItem>
         ))}
       </List>
@@ -302,58 +304,60 @@ function SideBar({ open, handleDrawerClose }) {
               },
             }}
           >
-            <ListItemButton
-              onClick={() => navigate(item.path)}
-              sx={[
-                {
-                  minHeight: 48,
-                  px: 2.5,
-                  bgcolor:
-                    location.pathname === item.path
-                      ? lightMode
-                        ? deepPurple[100]
-                        : deepPurple[300]
-                      : null,
-                },
-                open
-                  ? {
-                      justifyContent: "initial",
-                    }
-                  : {
-                      justifyContent: "center",
-                    },
-              ]}
-            >
-              <ListItemIcon
+            <Tooltip title={open ? "" : item.text} placement="right">
+              <ListItemButton
+                onClick={() => navigate(item.path)}
                 sx={[
                   {
-                    minWidth: 0,
-                    justifyContent: "center",
+                    minHeight: 48,
+                    px: 2.5,
+                    bgcolor:
+                      location.pathname === item.path
+                        ? lightMode
+                          ? deepPurple[100]
+                          : deepPurple[300]
+                        : null,
                   },
                   open
                     ? {
-                        mr: 3,
+                        justifyContent: "initial",
                       }
                     : {
-                        mr: "auto",
+                        justifyContent: "center",
                       },
                 ]}
               >
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={item.text}
-                sx={[
-                  open
-                    ? {
-                        opacity: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      },
-                ]}
-              />
-            </ListItemButton>
+                <ListItemIcon
+                  sx={[
+                    {
+                      minWidth: 0,
+                      justifyContent: "center",
+                    },
+                    open
+                      ? {
+                          mr: 3,
+                        }
+                      : {
+                          mr: "auto",
+                        },
+                  ]}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={item.text}
+                  sx={[
+                    open
+                      ? {
+                          opacity: 1,
+                        }
+                      : {
+                          opacity: 0,
+                        },
+                  ]}
+                />
+              </ListItemButton>
+            </Tooltip>
           </ListItem>
         ))}
       </List>
@@ -380,58 +384,61 @@ function SideBar({ open, handleDrawerClose }) {
               },
             }}
           >
-            <ListItemButton
-              onClick={() => navigate(item.path)}
-              sx={[
-                {
-                  minHeight: 48,
-                  px: 2.5,
-                  bgcolor:
-                    location.pathname === item.path
-                      ? lightMode
-                        ? deepPurple[100]
-                        : deepPurple[300]
-                      : null,
-                },
-                open
-                  ? {
-                      justifyContent: "initial",
-                    }
-                  : {
-                      justifyContent: "center",
-                    },
-              ]}
-            >
-              <ListItemIcon
+            {" "}
+            <Tooltip title={open ? "" : item.text} placement="right">
+              <ListItemButton
+                onClick={() => navigate(item.path)}
                 sx={[
                   {
-                    minWidth: 0,
-                    justifyContent: "center",
+                    minHeight: 48,
+                    px: 2.5,
+                    bgcolor:
+                      location.pathname === item.path
+                        ? lightMode
+                          ? deepPurple[100]
+                          : deepPurple[300]
+                        : null,
                   },
                   open
                     ? {
-                        mr: 3,
+                        justifyContent: "initial",
                       }
                     : {
-                        mr: "auto",
+                        justifyContent: "center",
                       },
                 ]}
               >
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={item.text}
-                sx={[
-                  open
-                    ? {
-                        opacity: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      },
-                ]}
-              />
-            </ListItemButton>
+                <ListItemIcon
+                  sx={[
+                    {
+                      minWidth: 0,
+                      justifyContent: "center",
+                    },
+                    open
+                      ? {
+                          mr: 3,
+                        }
+                      : {
+                          mr: "auto",
+                        },
+                  ]}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={item.text}
+                  sx={[
+                    open
+                      ? {
+                          opacity: 1,
+                        }
+                      : {
+                          opacity: 0,
+                        },
+                  ]}
+                />
+              </ListItemButton>
+            </Tooltip>
           </ListItem>
         ))}
       </List>

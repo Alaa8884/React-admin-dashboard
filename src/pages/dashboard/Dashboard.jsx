@@ -8,7 +8,7 @@ import { deepPurple } from "@mui/material/colors";
 function Dashboard() {
   const theme = useTheme();
   return (
-    <Stack direction={"column"} gap={3}>
+    <Stack direction={"column"} gap={2}>
       <Box sx={{ textAlign: "right" }}>
         <Button
           variant="contained"
@@ -17,7 +17,7 @@ function Dashboard() {
               theme.palette.mode === "light"
                 ? deepPurple[600]
                 : deepPurple[300],
-            // color: theme.palette.mode === "light" ? "#333" : "#fff",
+            color: theme.palette.mode === "light" ? "#222" : "#fff",
             padding: "6px 8px",
             textTransform: "capitalize",
           }}
