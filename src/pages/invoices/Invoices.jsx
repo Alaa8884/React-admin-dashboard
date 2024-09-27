@@ -4,7 +4,10 @@ import PageContainer from "../../components/PageContainer";
 
 function Contacts() {
   return (
-    <PageContainer>
+    <PageContainer
+      containerTitle={"Invoices"}
+      containerSubTitle={"List of Invoice Balances"}
+    >
       <DataGrid
         checkboxSelection
         disableRowSelectionOnClick

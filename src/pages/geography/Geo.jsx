@@ -3,9 +3,9 @@ import { Box, useTheme } from "@mui/material";
 import { ResponsiveChoropleth } from "@nivo/geo";
 import { data } from "../../assets/data/geographyData";
 import { worldCountry } from "../../assets/data/worldCountry";
+import HeaderInfo from "../../components/HeaderInfo";
 
-
-function Geo({isDashboard}) {
+function Geo({ isDashboard }) {
   const theme = useTheme();
   return (
     <Box
@@ -15,6 +15,11 @@ function Geo({isDashboard}) {
         borderRadius: "8px",
       }}
     >
+      {isDashboard ? (
+        ""
+      ) : (
+        <HeaderInfo title={"Geography"} subTitle={"Simple Geography Chart"} />
+      )}
       <ResponsiveChoropleth
         data={data}
         features={worldCountry.features}
@@ -196,35 +201,37 @@ function Geo({isDashboard}) {
           },
         ]}
         legends={
-          isDashboard ? []: [
-            {
-              anchor: "bottom-left",
-              direction: "column",
-              justify: true,
-              translateX: 20,
-              translateY: -20,
-              itemsSpacing: 0,
-              itemWidth: 94,
-              itemHeight: 18,
-              itemDirection: "left-to-right",
-              itemTextColor: theme.palette.text.primary,
-              itemOpacity: 0.85,
-              symbolSize: 20,
-              effects: [
+          isDashboard
+            ? []
+            : [
                 {
-                  on: "hover",
-                  style: {
-                    itemTextColor: theme.palette.text.primary,
-                    itemOpacity: 1,
-                  },
+                  anchor: "bottom-left",
+                  direction: "column",
+                  justify: true,
+                  translateX: 20,
+                  translateY: -20,
+                  itemsSpacing: 0,
+                  itemWidth: 94,
+                  itemHeight: 18,
+                  itemDirection: "left-to-right",
+                  itemTextColor: theme.palette.text.primary,
+                  itemOpacity: 0.85,
+                  symbolSize: 20,
+                  effects: [
+                    {
+                      on: "hover",
+                      style: {
+                        itemTextColor: theme.palette.text.primary,
+                        itemOpacity: 1,
+                      },
+                    },
+                  ],
                 },
-              ],
-            },
-          ]
+              ]
         }
       />
     </Box>
   );
 }
 
-export default Geo
+export default Geo;

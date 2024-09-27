@@ -7,7 +7,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 
 import { styled, alpha } from "@mui/material/styles";
-import { Box, Stack, useTheme } from "@mui/material";
+import { Box, Stack, Tooltip, useTheme } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
@@ -122,32 +122,46 @@ function TopBar({ open, handleDrawerOpen, handleToggleColorMode }) {
         <Box flexGrow={1}></Box>
 
         <Stack direction="row" spacing={1}>
-          {theme.palette.mode === "light" ? (
-            <IconButton
-              onClick={handleToggleColorMode}
-              color="inherit"
-              aria-label="light-mode"
-            >
-              <LightModeOutlinedIcon />
+          <Tooltip
+            title={theme.palette.mode === "light" ? "Dark mode" : "Light mode"}
+            placement="bottom"
+          >
+            {theme.palette.mode === "light" ? (
+              <IconButton
+                onClick={handleToggleColorMode}
+                color="inherit"
+                aria-label="light-mode"
+              >
+                <LightModeOutlinedIcon />
+              </IconButton>
+            ) : (
+              <IconButton
+                onClick={handleToggleColorMode}
+                color="inherit"
+                aria-label="dark-mode"
+              >
+                <DarkModeOutlinedIcon />
+              </IconButton>
+            )}
+          </Tooltip>
+          <Tooltip title={"Show notifications"} placement="bottom">
+            <IconButton color="inherit" aria-label="notifications">
+              <NotificationsNoneOutlinedIcon />
             </IconButton>
-          ) : (
-            <IconButton
-              onClick={handleToggleColorMode}
-              color="inherit"
-              aria-label="dark-mode"
-            >
-              <DarkModeOutlinedIcon />
+          </Tooltip>
+          <Tooltip title={"Settings"} placement="bottom">
+            <IconButton color="inherit" aria-label="settings">
+              <SettingsOutlinedIcon />
             </IconButton>
-          )}
-          <IconButton color="inherit" aria-label="notifications">
-            <NotificationsNoneOutlinedIcon />
-          </IconButton>
-          <IconButton color="inherit" aria-label="settings">
-            <SettingsOutlinedIcon />
-          </IconButton>
-          <IconButton color="inherit" aria-label="user">
-            <AccountCircleOutlinedIcon />
-          </IconButton>
+          </Tooltip>
+          <Tooltip
+            title={"Your profile"}
+            placement="bottom"
+          >
+            <IconButton color="inherit" aria-label="user">
+              <AccountCircleOutlinedIcon />
+            </IconButton>
+          </Tooltip>
         </Stack>
       </Toolbar>
     </AppBar>

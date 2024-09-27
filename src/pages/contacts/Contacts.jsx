@@ -5,7 +5,10 @@ import PageContainer from "../../components/PageContainer";
 function Contacts() {
   
   return (
-    <PageContainer>
+    <PageContainer
+      containerTitle={"CONTACTS"}
+      containerSubTitle={"List of Contacts for Future Reference"}
+    >
       <DataGrid
         pagination
         autoPageSize

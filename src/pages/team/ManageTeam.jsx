@@ -100,17 +100,18 @@ function ManageTeam() {
   ];
 
   return (
-    
-      <PageContainer>
-        <DataGrid
-          pagination
-          autoPageSize
-          rows={rows}
-          // @ts-ignore
-          columns={columns}
-        />
-      </PageContainer>
-
+    <PageContainer
+      containerTitle={"TEAM"}
+      containerSubTitle={"Managing the Team Members"}
+    >
+      <DataGrid
+        pagination
+        autoPageSize
+        rows={rows}
+        // @ts-ignore
+        columns={columns}
+      />
+    </PageContainer>
   );
 }
 

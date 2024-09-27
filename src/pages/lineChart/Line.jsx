@@ -2,11 +2,17 @@
 import { Box, useTheme } from "@mui/material";
 import { ResponsiveLine } from "@nivo/line";
 import { data } from "../../assets/data/lineChart";
+import HeaderInfo from "../../components/HeaderInfo";
 
 function Line({ isDashboard = false }) {
   const theme = useTheme();
   return (
     <Box sx={{ height: isDashboard ? "280px" : "80vh" }}>
+      {isDashboard ? (
+        ""
+      ) : (
+        <HeaderInfo title={"Line Chart"} subTitle={"Simple Line Chart"} />
+      )}
       <ResponsiveLine
         theme={{
           text: {

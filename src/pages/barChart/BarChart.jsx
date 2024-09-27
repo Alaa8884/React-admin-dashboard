@@ -1,7 +1,7 @@
 import Bar from "./Bar";
 
 function BarChart() {
-  return <Bar/>
+  return <Bar isDashboard={false}/>
 }
 
 export default BarChart;

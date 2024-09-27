@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { deepPurple } from "@mui/material/colors";
+import HeaderInfo from "../../components/HeaderInfo";
 
 function FaqPage() {
   const theme = useTheme()
@@ -21,6 +22,7 @@ function FaqPage() {
 
   return (
     <Stack direction={"column"} gap={2}>
+      <HeaderInfo title="FAQ" subTitle="Frequently Asked Questions Page" />
       <Accordion
         // @ts-ignore
         // expanded={expanded === "panel1"}
@@ -38,8 +40,7 @@ function FaqPage() {
           <Typography sx={{ width: "33%", flexShrink: 0 }}>
             General settings
           </Typography>
-          <Typography sx={{ color: "text.secondary" }}>
-          </Typography>
+          <Typography sx={{ color: "text.secondary" }}></Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -48,7 +49,7 @@ function FaqPage() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-     
+
       <Accordion
         // @ts-ignore
         expanded={expanded === "panel2"}

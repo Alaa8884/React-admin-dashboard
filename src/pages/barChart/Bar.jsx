@@ -2,11 +2,16 @@
 import { ResponsiveBar } from "@nivo/bar";
 import { data } from "../../assets/data/barChartData";
 import { Box, useTheme } from "@mui/material";
+import HeaderInfo from "../../components/HeaderInfo";
 
-function Bar({ isDashboard }) {
+function Bar({ isDashboard=false }) {
   const theme = useTheme();
   return (
     <Box sx={{ height: isDashboard ? "280px" : "80vh" }}>
+     {isDashboard ? "" : <HeaderInfo
+        title={"Bar Chart"}
+        subTitle={"The minimum wage in Germany, France and Spain (EUR/month)"}
+      />}
       <ResponsiveBar
         theme={{
           text: {

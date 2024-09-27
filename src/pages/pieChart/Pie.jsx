@@ -2,11 +2,17 @@
 import { ResponsivePie } from "@nivo/pie";
 import { pieData } from "../../assets/data/pieChartData";
 import { Box, useTheme } from "@mui/material";
+import HeaderInfo from "../../components/HeaderInfo";
 
 function Pie({ isDashboard = false }) {
   const theme = useTheme();
   return (
     <Box sx={{ height: isDashboard ? "280px" : "80vh" }}>
+      {isDashboard ? (
+        ""
+      ) : (
+        <HeaderInfo title={"Pie Chart"} subTitle={"Simple Pie Chart"} />
+      )}
       <ResponsivePie
         data={pieData}
         margin={

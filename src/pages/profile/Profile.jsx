@@ -12,6 +12,7 @@ import {
   useTheme,
 } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import HeaderInfo from "../../components/HeaderInfo";
 
 const userRole = [
   {
@@ -69,6 +70,10 @@ function Profile() {
       autoComplete="on"
       onSubmit={handleSubmit(onSubmit)}
     >
+      <HeaderInfo
+        title={"CREATE USER"}
+        subTitle={"Create a New User Profile"}
+      />
       <Stack direction={{ xs: "column", sm: "row" }} gap={2}>
         <TextField
           sx={{ flex: 1 }}

@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Box, useTheme } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
+import HeaderInfo from "./HeaderInfo";
 
 
-function PageContainer({ children }) {
+function PageContainer({ children, containerTitle, containerSubTitle }) {
   const theme = useTheme()
   return (
     <Box
@@ -17,6 +18,7 @@ function PageContainer({ children }) {
         overflow: "auto",
       }}
     >
+      <HeaderInfo title={containerTitle} subTitle={containerSubTitle} />
       {children}
     </Box>
   );

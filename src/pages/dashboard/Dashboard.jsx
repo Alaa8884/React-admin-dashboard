@@ -1,14 +1,16 @@
-import { Box, Button, Stack, useTheme } from "@mui/material";
+import { Box, Button, Stack,  useTheme } from "@mui/material";
 import Row01 from "./Row01";
 import Row02 from "./Row02";
 import Row03 from "./Row03";
 import { DownloadOutlined } from "@mui/icons-material";
 import { deepPurple } from "@mui/material/colors";
+import HeaderInfo from "../../components/HeaderInfo";
 
 function Dashboard() {
   const theme = useTheme();
   return (
     <Stack direction={"column"} gap={2}>
+      <HeaderInfo title={"Dashboard"} subTitle={"Welcome to your dashboard"} />
       <Box sx={{ textAlign: "right" }}>
         <Button
           variant="contained"
