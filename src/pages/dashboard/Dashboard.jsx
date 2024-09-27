@@ -10,7 +10,7 @@ function Dashboard() {
   const theme = useTheme();
   return (
     <Stack direction={"column"} gap={2}>
-      <HeaderInfo title={"Dashboard"} subTitle={"Welcome to your dashboard"} />
+      <HeaderInfo title={"Dashboard"} subTitle={"Welcome to your dashboard"} isDashboard={true} />
       <Box sx={{ textAlign: "right" }}>
         <Button
           variant="contained"

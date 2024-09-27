@@ -2,11 +2,11 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 
-function HeaderInfo({ title, subTitle }) {
-  document.title = "Admin dashboard " + title +" page";
+function HeaderInfo({ title, subTitle, isDashboard = false }) {
+  document.title = "Admin dashboard " + title + " page";
   const theme = useTheme();
   return (
-    <Box sx={{mb: "5px"}}>
+    <Box sx={{ mb: isDashboard ? 0 : 1.5 }}>
       <Typography
         variant="h5"
         fontWeight={"bold"}
@@ -15,9 +15,11 @@ function HeaderInfo({ title, subTitle }) {
             theme.palette.mode === "light" ? deepPurple[600] : deepPurple[300],
         }}
       >
-       {title}
+        {title}
       </Typography>
-      <Typography variant="body1" fontWeight={"bold"}>{subTitle}</Typography>
+      <Typography variant="body1" fontWeight={"bold"}>
+        {subTitle}
+      </Typography>
     </Box>
   );
 }
