@@ -1,12 +1,12 @@
 import { DataGrid } from "@mui/x-data-grid";
-import { rows } from "../../../assets/data/data";
+import { rows } from "../../assets/data/teamData";
 import { Box, Typography, useTheme } from "@mui/material";
-import { deepPurple } from "@mui/material/colors";
 import {
   AdminPanelSettingsOutlined,
   LockOpenOutlined,
   SecurityOutlined,
 } from "@mui/icons-material";
+import PageContainer from "../../components/PageContainer";
 
 function ManageTeam() {
   const theme = useTheme();
@@ -41,6 +41,7 @@ function ManageTeam() {
       headerClassName: "team-info",
       align: "center",
       headerAlign: "center",
+      width: 40,
     },
     {
       field: "phone",
@@ -61,10 +62,10 @@ function ManageTeam() {
         return (
           <Box
             sx={{
+              p: "5px",
               width: "99px",
               m: "8px auto",
-              p: "5px",
-              borderRadius: "5px",
+              borderRadius: "4px",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-evenly",
@@ -99,28 +100,17 @@ function ManageTeam() {
   ];
 
   return (
-    // <Box>
-    <Box
-      sx={{
-        width: "95%",
-        height: 600,
-        mx: "auto",
-        mb: "50px",
-        ".team-info": {
-          backgroundColor:
-            theme.palette.mode === "light" ? deepPurple[100] : deepPurple[300],
-        },
-      }}
-    >
-      <DataGrid
-        pagination
-        autoPageSize
-        rows={rows}
-        // @ts-ignore
-        columns={columns}
-      />
-    </Box>
-    // </Box>
+    
+      <PageContainer>
+        <DataGrid
+          pagination
+          autoPageSize
+          rows={rows}
+          // @ts-ignore
+          columns={columns}
+        />
+      </PageContainer>
+
   );
 }
 

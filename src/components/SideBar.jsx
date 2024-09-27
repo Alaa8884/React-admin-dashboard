@@ -208,6 +208,7 @@ function SideBar({ open, handleDrawerClose }) {
             disablePadding
             sx={{
               display: "block",
+             textAlign: "center",
               ":hover": {
                 bgcolor: lightMode ? deepPurple[100] : deepPurple[300],
               },

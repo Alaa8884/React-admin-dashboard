@@ -8,17 +8,17 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from "./App";
-import Contacts from "./components/pages/contacts/Contacts";
-import Dashboard from "./components/pages/dashboard/Dashboard";
-import Invoices from "./components/pages/invoices/Invoices";
-import ManageTeam from "./components/pages/team/ManageTeam";
-import Profile from "./components/pages/profile/Profile";
-import Calender from "./components/pages/calender/Calender";
-import FaqPage from "./components/pages/faq/FaqPage";
-import BarChart from "./components/pages/barChart/BarChart";
-import PieChart from "./components/pages/pieChart/PieChart";
-import LineChart from "./components/pages/lineChart/LineChart";
-import Geography from "./components/pages/geography/geography";
+import Contacts from "./pages/contacts/Contacts";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Invoices from "./pages/invoices/Invoices";
+import ManageTeam from "./pages/team/ManageTeam";
+import Profile from "./pages/profile/Profile";
+import Calender from "./pages/calender/Calender";
+import FaqPage from "./pages/faq/FaqPage";
+import BarChart from "./pages/barChart/BarChart";
+import PieChart from "./pages/pieChart/PieChart";
+import LineChart from "./pages/lineChart/LineChart";
+import Geography from "./pages/geography/Geography";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
