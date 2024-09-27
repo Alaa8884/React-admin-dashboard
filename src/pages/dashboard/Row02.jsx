@@ -21,7 +21,7 @@ function Row02() {
           maxWidth: "900px",
           flexGrow: 1,
           background: theme.palette.mode === "light" ? deepPurple[50] : "",
-          border: "2px solid #111",
+          borderRadius: "4px",
         }}
       >
         <Stack

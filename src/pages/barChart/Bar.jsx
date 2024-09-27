@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import { ResponsiveBar } from "@nivo/bar";
 import { data } from "../../assets/data/barChartData";
 import { Box, useTheme } from "@mui/material";
 
-function Bar() {
+function Bar({ isDashboard }) {
   const theme = useTheme();
   return (
-    <Box sx={{ height: "80vh" }}>
+    <Box sx={{ height: isDashboard ? "280px" : "80vh" }}>
       <ResponsiveBar
         theme={{
           text: {
@@ -119,7 +120,11 @@ function Bar() {
         data={data}
         keys={["Spain", "France", "Germany", "Italy", "Japan"]}
         indexBy="year"
-        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+        margin={
+          isDashboard
+            ? { top: 10, right: 110, bottom: 30, left: 50 }
+            : { top: 50, right: 130, bottom: 50, left: 60 }
+        }
         padding={0.2}
         innerPadding={1}
         valueScale={{ type: "linear" }}
@@ -155,7 +160,7 @@ function Bar() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Year",
+          legend: isDashboard ? "" : "Year",
           legendPosition: "middle",
           legendOffset: 40,
           truncateTickAt: 0,
@@ -164,7 +169,7 @@ function Bar() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Salary",
+          legend: isDashboard ? "" : "Salary",
           legendPosition: "middle",
           legendOffset: -50,
           truncateTickAt: 0,
