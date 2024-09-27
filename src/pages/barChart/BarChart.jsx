@@ -1,5 +1,7 @@
+import Bar from "./Bar";
+
 function BarChart() {
-  return <div>BarChart</div>;
+  return <Bar/>
 }
 
-export default BarChart
+export default BarChart;
