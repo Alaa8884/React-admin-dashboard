@@ -7,7 +7,7 @@ import HeaderInfo from "../../components/HeaderInfo";
 function Bar({ isDashboard=false }) {
   const theme = useTheme();
   return (
-    <Box sx={{ height: isDashboard ? "280px" : "80vh" }}>
+    <Box sx={{ width: "100vw" ,height: isDashboard ? "280px" : "80vh" }}>
      {isDashboard ? "" : <HeaderInfo
         title={"Bar Chart"}
         subTitle={"The minimum wage in Germany, France and Spain (EUR/month)"}

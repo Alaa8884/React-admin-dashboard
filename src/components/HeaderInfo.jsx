@@ -13,11 +13,12 @@ function HeaderInfo({ title, subTitle, isDashboard = false }) {
         sx={{
           color:
             theme.palette.mode === "light" ? deepPurple[600] : deepPurple[300],
+          fontSize:{xs:"20px", sm:"25px"}
         }}
       >
         {title}
       </Typography>
-      <Typography variant="body1" fontWeight={"bold"}>
+      <Typography variant="body1" fontWeight={"bold"} sx={{fontSize: {xs:"11px",}}}>
         {subTitle}
       </Typography>
     </Box>

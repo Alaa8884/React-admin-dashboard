@@ -11,6 +11,7 @@ import "./calender.css";
 import { deepPurple } from "@mui/material/colors";
 
 function Calender() {
+  document.title = "Admin dashboard Calender page"
   const [currentEvents, setCurrentEvents] = useState([]);
 
   function handleDateSelect(selectInfo) {

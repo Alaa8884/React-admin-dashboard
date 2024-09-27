@@ -1,4 +1,4 @@
-import { Box, Button, Stack,  useTheme } from "@mui/material";
+import { Button, Stack,  useTheme } from "@mui/material";
 import Row01 from "./Row01";
 import Row02 from "./Row02";
 import Row03 from "./Row03";
@@ -10,8 +10,13 @@ function Dashboard() {
   const theme = useTheme();
   return (
     <Stack direction={"column"} gap={2}>
-      <HeaderInfo title={"Dashboard"} subTitle={"Welcome to your dashboard"} isDashboard={true} />
-      <Box sx={{ textAlign: "right" }}>
+      <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
+        {" "}
+        <HeaderInfo
+          title={"Dashboard"}
+          subTitle={"Welcome to your dashboard"}
+          isDashboard={true}
+        />
         <Button
           variant="contained"
           sx={{
@@ -20,13 +25,14 @@ function Dashboard() {
                 ? deepPurple[600]
                 : deepPurple[300],
             color: theme.palette.mode === "light" ? "#222" : "#fff",
-            padding: "6px 8px",
+            padding:{xs:"4px 6px", sm:"6px 8px"},
             textTransform: "capitalize",
+            fontSize: {xs:"12px", sm:"16px"},
           }}
         >
           <DownloadOutlined /> Download reports
         </Button>
-      </Box>
+      </Stack>
       <Row01 />
       <Row02 />
       <Row03 />

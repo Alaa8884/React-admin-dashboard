@@ -7,7 +7,12 @@ import HeaderInfo from "../../components/HeaderInfo";
 function Pie({ isDashboard = false }) {
   const theme = useTheme();
   return (
-    <Box sx={{ height: isDashboard ? "280px" : "80vh" }}>
+    <Box
+      sx={{
+        width: { xs: "95vw", sm: "" },
+        height: isDashboard ? "280px" : "80vh",
+      }}
+    >
       {isDashboard ? (
         ""
       ) : (
