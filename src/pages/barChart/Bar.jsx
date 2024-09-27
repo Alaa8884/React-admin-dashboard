@@ -4,14 +4,23 @@ import { data } from "../../assets/data/barChartData";
 import { Box, useTheme } from "@mui/material";
 import HeaderInfo from "../../components/HeaderInfo";
 
-function Bar({ isDashboard=false }) {
+function Bar({ isDashboard = false }) {
   const theme = useTheme();
   return (
-    <Box sx={{ width: "100vw" ,height: isDashboard ? "280px" : "80vh" }}>
-     {isDashboard ? "" : <HeaderInfo
-        title={"Bar Chart"}
-        subTitle={"The minimum wage in Germany, France and Spain (EUR/month)"}
-      />}
+    <Box
+      sx={{
+        width: isDashboard ? "100%" : "100vw",
+        height: isDashboard ? "280px" : "80vh",
+      }}
+    >
+      {isDashboard ? (
+        ""
+      ) : (
+        <HeaderInfo
+          title={"Bar Chart"}
+          subTitle={"The minimum wage in Germany, France and Spain (EUR/month)"}
+        />
+      )}
       <ResponsiveBar
         theme={{
           text: {
