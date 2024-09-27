@@ -1,12 +1,12 @@
+/* eslint-disable react/prop-types */
 import { Box, useTheme } from "@mui/material";
 import { ResponsiveLine } from "@nivo/line";
 import { data } from "../../assets/data/lineChart";
 
-
-function Line() {
+function Line({ isDashboard = false }) {
   const theme = useTheme();
   return (
-    <Box sx={{ height: "80vh" }}>
+    <Box sx={{ height: isDashboard ? "280px" : "80vh" }}>
       <ResponsiveLine
         theme={{
           text: {
@@ -135,7 +135,7 @@ function Line() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Transportation",
+          legend: isDashboard ? "" : "Transportation",
           legendOffset: 45,
           legendPosition: "middle",
           truncateTickAt: 0,
@@ -144,7 +144,7 @@ function Line() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Count",
+          legend: isDashboard ? "" : "Count",
           legendOffset: -50,
           legendPosition: "middle",
           truncateTickAt: 0,
