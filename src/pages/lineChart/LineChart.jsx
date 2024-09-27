@@ -1,5 +1,11 @@
+import Line from "./Line";
+
 function LineChart() {
-  return <div>LineChart</div>;
+  return (
+    <div>
+      <Line />
+    </div>
+  );
 }
 
-export default LineChart
+export default LineChart;
