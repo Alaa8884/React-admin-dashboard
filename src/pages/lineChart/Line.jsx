@@ -9,7 +9,7 @@ function Line({ isDashboard = false }) {
   return (
     <Box
       sx={{
-        width: isDashboard ? "100%" : "100vw",
+        // width: isDashboard ? "" : "100vw",
         height: isDashboard ? "280px" : "80vh",
       }}
     >

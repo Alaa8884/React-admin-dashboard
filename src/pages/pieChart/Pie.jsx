@@ -9,7 +9,6 @@ function Pie({ isDashboard = false }) {
   return (
     <Box
       sx={{
-        width: isDashboard ? "100%" : "95vw",
         height: isDashboard ? "280px" : "80vh",
       }}
     >

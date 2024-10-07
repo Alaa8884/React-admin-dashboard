@@ -10,7 +10,6 @@ function Geo({ isDashboard }) {
   return (
     <Box
       sx={{
-        width: "100vw",
         height: isDashboard ? "350px" : "85vh",
         borderRadius: "8px",
       }}

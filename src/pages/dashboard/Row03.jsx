@@ -66,7 +66,6 @@ function Row03() {
         }}
       >
         <Geo isDashboard={true} />{" "}
-       
       </Paper>
     </Stack>
   );
