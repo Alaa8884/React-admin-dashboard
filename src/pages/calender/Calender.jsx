@@ -4,14 +4,14 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { useState } from "react";
-import { Paper, Stack, useTheme } from "@mui/material";
+import { Paper, Stack } from "@mui/material";
 import { formatDate } from "@fullcalendar/core";
 import { createEventId } from "../../utils/event";
 import "./calender.css";
-import { deepPurple } from "@mui/material/colors";
+
 
 function Calender() {
-  document.title = "Admin dashboard Calender page"
+  document.title = "Admin dashboard Calender page";
   const [currentEvents, setCurrentEvents] = useState([]);
 
   function handleDateSelect(selectInfo) {
@@ -81,17 +81,17 @@ function renderEventContent(eventInfo) {
 }
 
 function Sidebar({ currentEvents }) {
-  const theme = useTheme();
   return (
     <Paper
       className="demo-app-sidebar"
       sx={{
-        background: theme.palette.mode === "light" ? deepPurple[50] : "",
         borderRadius: "8px",
       }}
     >
       <div className="demo-app-sidebar-section">
-        <h2 style={{textAlign: "center"}}>All Events ({currentEvents.length})</h2>
+        <h2 style={{ textAlign: "center" }}>
+          All Events ({currentEvents.length})
+        </h2>
         <ul>
           {currentEvents.map((event) => (
             <SidebarEvent key={event.id} event={event} />

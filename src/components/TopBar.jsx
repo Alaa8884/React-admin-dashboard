@@ -13,7 +13,6 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import { deepPurple } from "@mui/material/colors";
 
 const drawerWidth = 240;
 
@@ -89,9 +88,7 @@ function TopBar({ open, handleDrawerOpen, handleToggleColorMode }) {
       position="fixed"
       // @ts-ignore
       open={open}
-      sx={{
-        bgcolor: theme.palette.mode === "light" ? deepPurple[600] : "#1d152c",
-      }}
+    
     >
       <Toolbar>
         <IconButton

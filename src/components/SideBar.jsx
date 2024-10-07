@@ -24,10 +24,9 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 import { styled, useTheme } from "@mui/material/styles";
 import { Avatar, Tooltip, Typography } from "@mui/material";
-import { deepPurple } from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 // @ts-ignore
 import image from "../assets/images/admin.jpg";
-
 
 const drawerWidth = 240;
 
@@ -174,7 +173,7 @@ function SideBar({ open, handleDrawerClose }) {
           width: open ? 70 : 45,
           height: open ? 70 : 45,
           my: 1,
-          border: lightMode ? "2px solid #b39ddb " : "2px solid #7e57c2",
+          border: lightMode ? "2px solid #666 " : "2px solid #fff",
           transition: "0.4s",
           aspectRatio: 1,
         }}
@@ -210,15 +209,15 @@ function SideBar({ open, handleDrawerClose }) {
               display: "block",
               textAlign: "center",
               ":hover": {
-                bgcolor: lightMode ? deepPurple[100] : deepPurple[300],
+                bgcolor: !lightMode ? grey[800] : grey[300],
               },
               transition: " 0.4s",
               ":focus": {
                 bgcolor:
                   location.pathname === item.path
                     ? lightMode
-                      ? deepPurple[100]
-                      : deepPurple[300]
+                      ? grey[800]
+                      : grey[300]
                     : null,
               },
             }}
@@ -232,9 +231,9 @@ function SideBar({ open, handleDrawerClose }) {
                     px: 2.5,
                     bgcolor:
                       location.pathname === item.path
-                        ? lightMode
-                          ? deepPurple[100]
-                          : deepPurple[300]
+                        ? !lightMode
+                          ? grey[800]
+                          : grey[300]
                         : null,
                   },
                   open
@@ -290,16 +289,17 @@ function SideBar({ open, handleDrawerClose }) {
             disablePadding
             sx={{
               display: "block",
+              textAlign: "center",
               ":hover": {
-                bgcolor: lightMode ? deepPurple[100] : deepPurple[300],
+                bgcolor: !lightMode ? grey[800] : grey[300],
               },
               transition: " 0.4s",
               ":focus": {
                 bgcolor:
                   location.pathname === item.path
                     ? lightMode
-                      ? deepPurple[100]
-                      : deepPurple[300]
+                      ? grey[800]
+                      : grey[300]
                     : null,
               },
             }}
@@ -313,9 +313,9 @@ function SideBar({ open, handleDrawerClose }) {
                     px: 2.5,
                     bgcolor:
                       location.pathname === item.path
-                        ? lightMode
-                          ? deepPurple[100]
-                          : deepPurple[300]
+                        ? !lightMode
+                          ? grey[800]
+                          : grey[300]
                         : null,
                   },
                   open
@@ -370,21 +370,21 @@ function SideBar({ open, handleDrawerClose }) {
             disablePadding
             sx={{
               display: "block",
+              textAlign: "center",
               ":hover": {
-                bgcolor: lightMode ? deepPurple[100] : deepPurple[300],
+                bgcolor: !lightMode ? grey[800] : grey[300],
               },
               transition: " 0.4s",
               ":focus": {
                 bgcolor:
                   location.pathname === item.path
                     ? lightMode
-                      ? deepPurple[100]
-                      : deepPurple[300]
+                      ? grey[800]
+                      : grey[300]
                     : null,
               },
             }}
           >
-            {" "}
             <Tooltip title={open ? "" : item.text} placement="right">
               <ListItemButton
                 onClick={() => navigate(item.path)}
@@ -394,9 +394,9 @@ function SideBar({ open, handleDrawerClose }) {
                     px: 2.5,
                     bgcolor:
                       location.pathname === item.path
-                        ? lightMode
-                          ? deepPurple[100]
-                          : deepPurple[300]
+                        ? !lightMode
+                          ? grey[800]
+                          : grey[300]
                         : null,
                   },
                   open

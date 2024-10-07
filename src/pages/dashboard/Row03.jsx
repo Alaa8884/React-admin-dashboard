@@ -1,6 +1,5 @@
 import { Paper, Stack, Typography, useTheme } from "@mui/material";
 import Pie from "../pieChart/Pie";
-import { deepPurple } from "@mui/material/colors";
 import Bar from "../barChart/Bar";
 import Geo from "../geography/Geo";
 
@@ -13,14 +12,13 @@ function Row03() {
           width: "28%",
           minWidth: "300px",
           flexGrow: 1,
-          background: theme.palette.mode === "light" ? deepPurple[50] : "",
+          background:
+            theme.palette.mode === "light" ? theme.palette.grey[100] : "",
           borderRadius: "4px",
         }}
       >
         <Typography
-          color={
-            theme.palette.mode === "light" ? deepPurple[600] : deepPurple[300]
-          }
+          color={theme.palette.secondary.main}
           fontWeight={"bold"}
           sx={{ padding: "20px 30px 0 30px" }}
           variant="h6"
@@ -40,14 +38,13 @@ function Row03() {
           width: "28%",
           minWidth: "300px",
           flexGrow: 1,
-          background: theme.palette.mode === "light" ? deepPurple[50] : "",
+          background:
+            theme.palette.mode === "light" ? theme.palette.grey[100] : "",
           borderRadius: "4px",
         }}
       >
         <Typography
-          color={
-            theme.palette.mode === "light" ? deepPurple[600] : deepPurple[300]
-          }
+          color={theme.palette.secondary.main}
           fontWeight={"bold"}
           sx={{ padding: "20px 30px 50px 30px" }}
           variant="h6"
@@ -61,7 +58,8 @@ function Row03() {
           width: "28%",
           minWidth: "100%",
           flexGrow: 1,
-          background: theme.palette.mode === "light" ? deepPurple[50] : "",
+          background:
+            theme.palette.mode === "light" ? theme.palette.grey[100] : "",
           borderRadius: "4px",
         }}
       >

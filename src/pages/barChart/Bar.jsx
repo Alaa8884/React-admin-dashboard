@@ -9,8 +9,8 @@ function Bar({ isDashboard = false }) {
   return (
     <Box
       sx={{
-        width: isDashboard ? "100%" : "100vw",
-        height: isDashboard ? "280px" : "80vh",
+        width: "100%",
+        height: isDashboard ? "300px" : "80vh",
       }}
     >
       {isDashboard ? (
@@ -143,7 +143,7 @@ function Bar({ isDashboard = false }) {
         innerPadding={1}
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
-        colors={{ scheme: "purpleRed_green" }}
+        colors={{ scheme: "paired" }}
         defs={[
           {
             id: "dots",

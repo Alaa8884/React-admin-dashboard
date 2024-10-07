@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { Box, Paper, Stack, Typography, useTheme } from "@mui/material";
-import { deepPurple } from "@mui/material/colors";
 import { ResponsivePie } from "@nivo/pie";
 
 function Card({ icon, title, subTitle, data, count, scheme }) {
@@ -13,7 +12,7 @@ function Card({ icon, title, subTitle, data, count, scheme }) {
         p: 1.5,
         display: "flex",
         justifyContent: "space-between",
-        background: theme.palette.mode === "light" ? deepPurple[50] : "",
+        background: theme.palette.mode === "light" ? theme.palette.grey[100]: "",
         boxSizing: "border-box",
       }}
     >

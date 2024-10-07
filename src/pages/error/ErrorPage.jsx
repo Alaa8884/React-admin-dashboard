@@ -12,11 +12,11 @@ function ErrorPage() {
           minWidth: "300px",
           p: 4,
           display: "flex",
-          alignItems:"center",
-          flexDirection:"column",
-         gap:3,
+          alignItems: "center",
+          flexDirection: "column",
+          gap: 3,
           background: theme.palette.mode === "light" ? deepPurple[50] : "",
-          borderRadius: "8px"
+          borderRadius: "8px",
         }}
       >
         <Typography
@@ -24,7 +24,9 @@ function ErrorPage() {
           mb={3}
           fontWeight={"bold"}
           color={
-            theme.palette.mode === "light" ? deepPurple[600] : deepPurple[300]
+            theme.palette.mode === "light"
+              ? theme.palette.error.dark
+              : theme.palette.error.light
           }
         >
           Page not found
@@ -36,14 +38,8 @@ function ErrorPage() {
         >
           <Typography variant="h6">Please try again</Typography>
           <Button
-            sx={{
-              background:
-                theme.palette.mode === "light"
-                  ? deepPurple[600]
-                  : deepPurple[300],
-              color: theme.palette.mode === "light" ? "#222" : "#fff",
-            }}
-            variant="outlined"
+            color="primary"
+            variant="contained"
             onClick={() => navigate(-1)}
           >
             Go back

@@ -138,7 +138,7 @@ function Pie({ isDashboard = false }) {
         padAngle={3}
         cornerRadius={4}
         activeOuterRadiusOffset={8}
-        colors={{ scheme: "purpleRed_green" }}
+        colors={{ scheme: "blues" }}
         borderWidth={1}
         borderColor={{
           from: "color",

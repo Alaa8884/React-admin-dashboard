@@ -19,6 +19,7 @@ function Contacts() {
         rows={rows}
         // @ts-ignore
         columns={columns}
+      
       />
     </PageContainer>
   );

@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { Box, useTheme } from "@mui/material";
-import { deepPurple } from "@mui/material/colors";
 import HeaderInfo from "./HeaderInfo";
 
 
@@ -13,9 +12,15 @@ function PageContainer({ children, containerTitle, containerSubTitle }) {
         mx: "auto",
         ".team-info": {
           backgroundColor:
-            theme.palette.mode === "light" ? deepPurple[100] : deepPurple[300],
+            theme.palette.mode === "light"
+              ? theme.palette.grey[300]
+              : theme.palette.grey[700],
         },
         overflow: "auto",
+        "& .MuiDataGrid-columnHeaders": {
+          backgroundColor: "red",
+          borderBottom: "none",
+        }
       }}
     >
       <HeaderInfo title={containerTitle} subTitle={containerSubTitle} />

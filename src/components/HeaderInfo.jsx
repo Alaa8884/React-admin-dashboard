@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { Box, Typography, useTheme } from "@mui/material";
-import { deepPurple } from "@mui/material/colors";
 
 function HeaderInfo({ title, subTitle, isDashboard = false }) {
   document.title = "Admin dashboard " + title + " page";
@@ -11,14 +10,17 @@ function HeaderInfo({ title, subTitle, isDashboard = false }) {
         variant="h5"
         fontWeight={"bold"}
         sx={{
-          color:
-            theme.palette.mode === "light" ? deepPurple[600] : deepPurple[300],
-          fontSize:{xs:"20px", sm:"25px"}
+          color: theme.palette.info.light,
+          fontSize: { xs: "20px", sm: "25px" },
         }}
       >
         {title}
       </Typography>
-      <Typography variant="body1" fontWeight={"bold"} sx={{fontSize: {xs:"11px",}}}>
+      <Typography
+        variant="body1"
+        fontWeight={"bold"}
+        sx={{ fontSize: { xs: "11px" } }}
+      >
         {subTitle}
       </Typography>
     </Box>

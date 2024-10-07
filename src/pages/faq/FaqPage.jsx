@@ -8,7 +8,6 @@ import {
   useTheme,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { deepPurple } from "@mui/material/colors";
 import HeaderInfo from "../../components/HeaderInfo";
 
 function FaqPage() {
@@ -29,7 +28,8 @@ function FaqPage() {
         onChange={handleChange("panel1")}
         defaultExpanded
         sx={{
-          background: theme.palette.mode === "light" ? deepPurple[100] : "",
+          background:
+            theme.palette.mode === "light" ? theme.palette.grey[200] : "",
         }}
       >
         <AccordionSummary
@@ -55,7 +55,8 @@ function FaqPage() {
         expanded={expanded === "panel2"}
         onChange={handleChange("panel2")}
         sx={{
-          background: theme.palette.mode === "light" ? deepPurple[100] : "",
+          background:
+            theme.palette.mode === "light" ? theme.palette.grey[200] : "",
         }}
       >
         <AccordionSummary
@@ -81,7 +82,8 @@ function FaqPage() {
         expanded={expanded === "panel3"}
         onChange={handleChange("panel3")}
         sx={{
-          background: theme.palette.mode === "light" ? deepPurple[100] : "",
+          background:
+            theme.palette.mode === "light" ? theme.palette.grey[200] : "",
         }}
       >
         <AccordionSummary
@@ -108,7 +110,8 @@ function FaqPage() {
         expanded={expanded === "panel4"}
         onChange={handleChange("panel4")}
         sx={{
-          background: theme.palette.mode === "light" ? deepPurple[100] : "",
+          background:
+            theme.palette.mode === "light" ? theme.palette.grey[200] : "",
         }}
       >
         <AccordionSummary

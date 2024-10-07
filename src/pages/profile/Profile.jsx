@@ -9,7 +9,6 @@ import {
   Stack,
   TextField,
   Typography,
-  useTheme,
 } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import HeaderInfo from "../../components/HeaderInfo";
@@ -36,7 +35,6 @@ const regPhone =
   /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
 
 function Profile() {
-  const theme = useTheme()
   const [open, setOpen] = useState(false);
 
   const {
@@ -86,7 +84,7 @@ function Profile() {
               ? "This field is required (write minimum 3 characters)"
               : ""
           }
-          color="secondary"
+          color="primary"
         />
         <TextField
           sx={{ flex: 1 }}
@@ -99,7 +97,7 @@ function Profile() {
               ? "This field is required (write minimum 3 characters)"
               : ""
           }
-          color="secondary"
+          color="primary"
         />
       </Stack>
       <TextField
@@ -111,7 +109,7 @@ function Profile() {
         })}
         error={Boolean(errors.email)}
         helperText={errors.email ? "Please provide a valid email address" : ""}
-        color="secondary"
+        color="primary"
       />
       <TextField
         label="Contact Number"
@@ -124,10 +122,10 @@ function Profile() {
         helperText={
           errors.contactPhone ? "Please provide a valid phone number" : ""
         }
-        color="secondary"
+        color="primary"
       />
-      <TextField label="Adress 1" variant="outlined" color="secondary" />
-      <TextField label="Adress 2" variant="outlined" color="secondary" />
+      <TextField label="Adress 1" variant="outlined" color="primary" />
+      <TextField label="Adress 2" variant="outlined" color="primary" />
       <TextField
         variant="outlined"
         id="outlined-select-userRole"
@@ -135,7 +133,7 @@ function Profile() {
         label="Role"
         defaultValue="User"
         helperText="Please select your user role"
-        color="secondary"
+        color="primary"
       >
         {userRole.map((option) => (
           <MenuItem key={option.value} value={option.value}>
@@ -150,7 +148,6 @@ function Profile() {
           sx={{
             textTransform: "capitalize",
             borderRadius: "8px",
-            background: theme.palette.secondary.dark,
           }}
         >
           Create New User
@@ -164,7 +161,7 @@ function Profile() {
           onClose={handleClose}
           message={
             <Stack direction={"row"} alignItems={"center"} gap={1}>
-              <CheckCircleOutlineIcon sx={{ color: "green" }} />{" "}
+              <CheckCircleOutlineIcon sx={{ color: "primary" }} />{" "}
               <Typography>Account created successfully</Typography>
             </Stack>
           }

@@ -7,7 +7,6 @@ import {
   useTheme,
 } from "@mui/material";
 import Line from "../lineChart/Line";
-import { deepPurple } from "@mui/material/colors";
 import { DownloadOutlined } from "@mui/icons-material";
 import { Transactions } from "../../assets/data/dashboardData";
 
@@ -20,7 +19,8 @@ function Row02() {
           minWidth: "300px",
           maxWidth: "900px",
           flexGrow: 1,
-          background: theme.palette.mode === "light" ? deepPurple[50] : "",
+          background:
+            theme.palette.mode === "light" ? theme.palette.grey[100] : "",
           borderRadius: "4px",
         }}
       >
@@ -31,11 +31,7 @@ function Row02() {
         >
           <Box>
             <Typography
-              color={
-                theme.palette.mode === "light"
-                  ? deepPurple[600]
-                  : deepPurple[300]
-              }
+              color={theme.palette.secondary.main}
               fontWeight={"bold"}
               sx={{ margin: "10px" }}
               variant="h6"
@@ -57,7 +53,8 @@ function Row02() {
       </Paper>
       <Box
         sx={{
-          background: theme.palette.mode === "light" ? deepPurple[50] : "",
+          background:
+            theme.palette.mode === "light" ? theme.palette.grey[100] : "",
           borderRadius: "4px",
           minWidth: "280px",
           maxHeight: 355,
@@ -67,12 +64,13 @@ function Row02() {
       >
         <Paper
           sx={{
-            background: theme.palette.mode === "light" ? deepPurple[50] : "",
+            background:
+              theme.palette.mode === "light" ? theme.palette.grey[100] : "",
           }}
         >
           <Typography
             color={
-              theme.palette.mode === "light" ? deepPurple[600] : deepPurple[300]
+              theme.palette.secondary.main
             }
             fontWeight={"bold"}
             p={1.2}
@@ -89,7 +87,9 @@ function Row02() {
                   justifyContent: "space-between",
                   alignItems: "center",
                   background:
-                    theme.palette.mode === "light" ? deepPurple[50] : "",
+                    theme.palette.mode === "light"
+                      ? theme.palette.grey[100]
+                      : "",
                 }}
                 key={item.txId}
               >
