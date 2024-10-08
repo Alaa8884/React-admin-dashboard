@@ -46,7 +46,7 @@ function Calender() {
   }
 
   return (
-    <Stack direction={"row"} sx={{maxHeight: ""}}>
+    <Stack direction={"row"}>
       <Sidebar currentEvents={currentEvents} />
       <div className="demo-app-main">
         <FullCalendar
