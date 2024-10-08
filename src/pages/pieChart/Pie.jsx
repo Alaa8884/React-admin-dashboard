@@ -230,7 +230,7 @@ function Pie({ isDashboard = false }) {
           ]
         }
         legends={
-          !isDashboard && [
+          isDashboard ? []: [
             {
               anchor: "bottom",
               direction: "row",

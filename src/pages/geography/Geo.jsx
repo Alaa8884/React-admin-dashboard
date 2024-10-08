@@ -132,7 +132,7 @@ function Geo({ isDashboard }) {
             tableCellValue: {},
           },
         }}
-        projectionScale={isDashboard ? 70 : 120}
+        projectionScale={isDashboard ? 70 :120}
         colors="spectral"
         domain={[0, 1000000]}
         unknownColor="#666666"

@@ -21,6 +21,7 @@ import LineChart from "./pages/lineChart/LineChart";
 import Geography from "./pages/geography/Geography";
 import ErrorPage from "./pages/error/ErrorPage";
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>

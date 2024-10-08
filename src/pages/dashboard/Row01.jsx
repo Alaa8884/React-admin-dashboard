@@ -6,9 +6,6 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import { data1, data2, data3, data4 } from "../../assets/data/dashboardData";
 
-
-
-
 function Row01() {
   const theme = useTheme();
   return (

@@ -9,7 +9,7 @@ function Line({ isDashboard = false }) {
   return (
     <Box
       sx={{
-        // width: isDashboard ? "" : "100vw",
+        width: { xs: "85vw", sm: "100%" },
         height: isDashboard ? "280px" : "80vh",
       }}
     >
@@ -47,7 +47,7 @@ function Line({ isDashboard = false }) {
                 strokeWidth: 1,
               },
               text: {
-                fontSize: isDashboard ? 8 : 12,
+                fontSize: isDashboard ? 5 : 12,
                 fill: theme.palette.text.primary,
                 outlineWidth: 0,
                 outlineColor: "transparent",
@@ -131,7 +131,7 @@ function Line({ isDashboard = false }) {
         data={data}
         margin={
           isDashboard
-            ? { top: 40, right: 100, bottom: 40, left: 40 }
+            ? { top: 40, right: 30, bottom: 40, left: 30 }
             : { top: 50, right: 110, bottom: 50, left: 60 }
         }
         xScale={{ type: "point" }}
@@ -172,32 +172,36 @@ function Line({ isDashboard = false }) {
         pointLabelYOffset={-12}
         enableTouchCrosshair={true}
         useMesh={true}
-        legends={[
-          {
-            anchor: "bottom-right",
-            direction: "column",
-            justify: false,
-            translateX: 100,
-            translateY: 0,
-            itemsSpacing: 0,
-            itemDirection: "left-to-right",
-            itemWidth: 80,
-            itemHeight: 20,
-            itemOpacity: 0.75,
-            symbolSize: isDashboard ? 7 : 12,
-            symbolShape: "circle",
-            symbolBorderColor: "rgba(0, 0, 0, .5)",
-            effects: [
-              {
-                on: "hover",
-                style: {
-                  itemBackground: "rgba(0, 0, 0, .03)",
-                  itemOpacity: 1,
+        legends={
+          isDashboard
+            ? []
+            : [
+                {
+                  anchor: "bottom-right",
+                  direction: "column",
+                  justify: false,
+                  translateX: 100,
+                  translateY: 0,
+                  itemsSpacing: 0,
+                  itemDirection: "left-to-right",
+                  itemWidth: 80,
+                  itemHeight: 20,
+                  itemOpacity: 0.75,
+                  symbolSize: isDashboard ? 6 : 12,
+                  symbolShape: "circle",
+                  symbolBorderColor: "rgba(0, 0, 0, .5)",
+                  effects: [
+                    {
+                      on: "hover",
+                      style: {
+                        itemBackground: "rgba(0, 0, 0, .03)",
+                        itemOpacity: 1,
+                      },
+                    },
+                  ],
                 },
-              },
-            ],
-          },
-        ]}
+              ]
+        }
       />
     </Box>
   );

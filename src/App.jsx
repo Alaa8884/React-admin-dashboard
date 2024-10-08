@@ -23,6 +23,7 @@ export default function MiniDrawer() {
       ? window.localStorage.getItem("currMode")
       : "light"
   );
+  // const [openSideBar, setOpenSideBar] =  useState(false)
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
   const handleDrawerOpen = () => {
