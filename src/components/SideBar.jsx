@@ -88,39 +88,51 @@ const closedMixin = (theme) => ({
 const array01 = [
   {
     text: "Dashboard",
-    icon: <HomeOutlinedIcon />,
+    icon: <HomeOutlinedIcon sx={{ fontSize: { xs: "20px", sm: "25px" } }} />,
     path: "/",
   },
   {
     text: "Manage Team",
-    icon: <PeopleOutlineOutlinedIcon />,
+    icon: (
+      <PeopleOutlineOutlinedIcon
+        sx={{ fontSize: { xs: "20px", sm: "25px" } }}
+      />
+    ),
     path: "/manage",
   },
   {
     text: "Contacts Information",
-    icon: <ContactsOutlinedIcon />,
+    icon: (
+      <ContactsOutlinedIcon sx={{ fontSize: { xs: "20px", sm: "25px" } }} />
+    ),
     path: "/contacts",
   },
   {
     text: "Invoices Balances",
-    icon: <ReceiptOutlinedIcon />,
+    icon: <ReceiptOutlinedIcon sx={{ fontSize: { xs: "20px", sm: "25px" } }} />,
     path: "/invoices",
   },
 ];
 const array02 = [
   {
     text: "Profile Form",
-    icon: <PersonOutlinedIcon />,
+    icon: <PersonOutlinedIcon sx={{ fontSize: { xs: "20px", sm: "25px" } }} />,
     path: "/profile",
   },
   {
     text: "Calender",
-    icon: <CalendarMonthOutlinedIcon />,
+    icon: (
+      <CalendarMonthOutlinedIcon
+        sx={{ fontSize: { xs: "20px", sm: "25px" } }}
+      />
+    ),
     path: "/calender",
   },
   {
     text: "FAQ Page",
-    icon: <HelpOutlineOutlinedIcon />,
+    icon: (
+      <HelpOutlineOutlinedIcon sx={{ fontSize: { xs: "20px", sm: "25px" } }} />
+    ),
     path: "/faq",
   },
 ];
@@ -128,22 +140,30 @@ const array02 = [
 const array03 = [
   {
     text: "Bar Chart",
-    icon: <BarChartOutlinedIcon />,
+    icon: (
+      <BarChartOutlinedIcon sx={{ fontSize: { xs: "20px", sm: "25px" } }} />
+    ),
     path: "/bar",
   },
   {
     text: "Pie Chart",
-    icon: <PieChartOutlineOutlinedIcon />,
+    icon: (
+      <PieChartOutlineOutlinedIcon
+        sx={{ fontSize: { xs: "20px", sm: "25px" } }}
+      />
+    ),
     path: "/pie",
   },
   {
     text: "Line Chart",
-    icon: <TimelineOutlinedIcon />,
+    icon: (
+      <TimelineOutlinedIcon sx={{ fontSize: { xs: "20px", sm: "25px" } }} />
+    ),
     path: "/line",
   },
   {
     text: "Geography Chart",
-    icon: <MapOutlinedIcon />,
+    icon: <MapOutlinedIcon sx={{ fontSize: { xs: "20px", sm: "25px" } }} />,
     path: "/geography",
   },
 ];
@@ -224,7 +244,13 @@ function SideBar({ open, handleDrawerClose }) {
           >
             <Tooltip title={open ? "" : item.text} placement="right">
               <ListItemButton
-                onClick={() => navigate(item.path)}
+                onClick={() => {
+                  {
+                    navigate(item.path);
+                    handleDrawerClose();
+                  }
+                  handleDrawerClose();
+                }}
                 sx={[
                   {
                     minHeight: 48,
@@ -306,7 +332,10 @@ function SideBar({ open, handleDrawerClose }) {
           >
             <Tooltip title={open ? "" : item.text} placement="right">
               <ListItemButton
-                onClick={() => navigate(item.path)}
+                onClick={() => {
+                  navigate(item.path);
+                  handleDrawerClose();
+                }}
                 sx={[
                   {
                     minHeight: 48,
@@ -387,7 +416,10 @@ function SideBar({ open, handleDrawerClose }) {
           >
             <Tooltip title={open ? "" : item.text} placement="right">
               <ListItemButton
-                onClick={() => navigate(item.path)}
+                onClick={() => {
+                  navigate(item.path);
+                  handleDrawerClose();
+                }}
                 sx={[
                   {
                     minHeight: 48,
