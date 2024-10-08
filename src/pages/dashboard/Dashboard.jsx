@@ -27,6 +27,7 @@ function Dashboard() {
             textTransform: "capitalize",
             fontSize: { xs: "12px", sm: "16px" },
           }}
+          aria-label="Download dashboard"
         >
           <DownloadOutlined /> Download reports
         </Button>

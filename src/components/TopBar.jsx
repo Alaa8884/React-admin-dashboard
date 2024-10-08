@@ -88,7 +88,6 @@ function TopBar({ open, handleDrawerOpen, handleToggleColorMode }) {
       position="fixed"
       // @ts-ignore
       open={open}
-    
     >
       <Toolbar>
         <IconButton
@@ -98,12 +97,12 @@ function TopBar({ open, handleDrawerOpen, handleToggleColorMode }) {
           edge="start"
           sx={[
             {
-              marginRight: 5,
+              marginRight: { xs: 2, sm: 5 },
             },
             open && { display: "none" },
           ]}
         >
-          <MenuIcon />
+          <MenuIcon sx={{ fontSize: { xs: "22px", sm: "25px" } }} />
         </IconButton>
 
         <Search>
@@ -118,7 +117,7 @@ function TopBar({ open, handleDrawerOpen, handleToggleColorMode }) {
 
         <Box flexGrow={1}></Box>
 
-        <Stack direction="row" spacing={1}>
+        <Stack direction="row" sx={{ gap: { xs: 0, sm: 2 } }}>
           <Tooltip
             title={theme.palette.mode === "light" ? "Dark mode" : "Light mode"}
             placement="bottom"
@@ -129,7 +128,9 @@ function TopBar({ open, handleDrawerOpen, handleToggleColorMode }) {
                 color="inherit"
                 aria-label="light-mode"
               >
-                <LightModeOutlinedIcon />
+                <LightModeOutlinedIcon
+                  sx={{ fontSize: { xs: "20px", sm: "25px" } }}
+                />
               </IconButton>
             ) : (
               <IconButton
@@ -137,26 +138,31 @@ function TopBar({ open, handleDrawerOpen, handleToggleColorMode }) {
                 color="inherit"
                 aria-label="dark-mode"
               >
-                <DarkModeOutlinedIcon />
+                <DarkModeOutlinedIcon
+                  sx={{ fontSize: { xs: "20px", sm: "25px" } }}
+                />
               </IconButton>
             )}
           </Tooltip>
           <Tooltip title={"Show notifications"} placement="bottom">
             <IconButton color="inherit" aria-label="notifications">
-              <NotificationsNoneOutlinedIcon />
+              <NotificationsNoneOutlinedIcon
+                sx={{ fontSize: { xs: "20px", sm: "25px" } }}
+              />
             </IconButton>
           </Tooltip>
           <Tooltip title={"Settings"} placement="bottom">
             <IconButton color="inherit" aria-label="settings">
-              <SettingsOutlinedIcon />
+              <SettingsOutlinedIcon
+                sx={{ fontSize: { xs: "20px", sm: "25px" } }}
+              />
             </IconButton>
           </Tooltip>
-          <Tooltip
-            title={"Your profile"}
-            placement="bottom"
-          >
+          <Tooltip title={"Your profile"} placement="bottom">
             <IconButton color="inherit" aria-label="user">
-              <AccountCircleOutlinedIcon />
+              <AccountCircleOutlinedIcon
+                sx={{ fontSize: { xs: "20px", sm: "25px" } }}
+              />
             </IconButton>
           </Tooltip>
         </Stack>
