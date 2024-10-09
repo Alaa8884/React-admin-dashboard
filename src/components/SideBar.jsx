@@ -177,7 +177,14 @@ function SideBar({ open, handleDrawerClose }) {
   return (
     <Drawer variant="permanent" open={open}>
       <DrawerHeader>
-        <IconButton onClick={handleDrawerClose}>
+        <IconButton
+          onClick={handleDrawerClose}
+          aria-label={
+            theme.direction === "rtl"
+              ? "Chevron to right icon"
+              : "Chevron to left icon"
+          }
+        >
           {theme.direction === "rtl" ? (
             <ChevronRightIcon />
           ) : (

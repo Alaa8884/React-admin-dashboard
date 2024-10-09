@@ -43,7 +43,7 @@ function Row02() {
             </Typography>
           </Box>
           <Box>
-            <IconButton sx={{ mr: 3 }}>
+            <IconButton sx={{ mr: 3 }} aria-label="Download buttton">
               {" "}
               <DownloadOutlined />
             </IconButton>

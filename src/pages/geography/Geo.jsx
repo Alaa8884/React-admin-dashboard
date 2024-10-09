@@ -5,7 +5,7 @@ import { data } from "../../assets/data/geographyData";
 import { worldCountry } from "../../assets/data/worldCountry";
 import HeaderInfo from "../../components/HeaderInfo";
 
-function Geo({ isDashboard }) {
+function Geo({ isDashboard = false }) {
   const theme = useTheme();
   return (
     <Box
@@ -132,7 +132,7 @@ function Geo({ isDashboard }) {
             tableCellValue: {},
           },
         }}
-        projectionScale={isDashboard ? 70 :120}
+        projectionScale={isDashboard ? 70 : 120}
         colors="spectral"
         domain={[0, 1000000]}
         unknownColor="#666666"
