@@ -57,13 +57,14 @@ function ManageTeam() {
       headerClassName: "team-info",
       align: "center",
       headerAlign: "center",
-      flex: 1,
+      flex: {lg:1, xs:0},
       renderCell: ({ row: { access } }) => {
         return (
           <Box
             sx={{
+              overflow: "auto",
               p: "5px",
-              width: "99px",
+              minWidth: "99px",
               m: "8px auto",
               borderRadius: "4px",
               display: "flex",

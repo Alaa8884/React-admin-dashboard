@@ -2,13 +2,13 @@
 import { Box, useTheme } from "@mui/material";
 import HeaderInfo from "./HeaderInfo";
 
-
 function PageContainer({ children, containerTitle, containerSubTitle }) {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <Box
       sx={{
         height: 650,
+        width: { lg: "90%", xs: "100%" },
         mx: "auto",
         ".team-info": {
           backgroundColor:
@@ -20,7 +20,7 @@ function PageContainer({ children, containerTitle, containerSubTitle }) {
         "& .MuiDataGrid-columnHeaders": {
           backgroundColor: "red",
           borderBottom: "none",
-        }
+        },
       }}
     >
       <HeaderInfo title={containerTitle} subTitle={containerSubTitle} />
